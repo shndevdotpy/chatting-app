@@ -3,7 +3,7 @@ var setLoader;
 var random;
 
 function loader() {
-    setLoader = setTimeout(showPage, 1000);
+    setLoader = setTimeout(showPage, 1000+Math.floor(Math.random() * 3000) + 1);
 }
 
 function showPage() {
@@ -76,5 +76,5 @@ function notifySound(x){
 
 function popSound(){
     var notify = new Audio('./sounds/pop.mp3');
-    notify.play();    
+    notify.play();
 }
