@@ -533,3 +533,7 @@ body{
     padding-top: 20px;
     color: white;
   }
+
+  .brand span a{
+    cursor: pointer;
+  }
