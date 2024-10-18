@@ -6,15 +6,15 @@
     <title>Chatting App</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body onload="loader(); randomDMNumber(150)">
-    <div id="loader" class="loader disable-selection"><div class="loadertext">Chatting App</div><div class="loaderdot"></div></div>
+<body onload="loader(); randomDMNumber(150); applyBrand()">
+    <div id="loader" class="loader disable-selection"><div id="loadertext" class="loadertext">Chatting App</div><div class="loaderdot"></div></div>
     <div id="settings-area" class="settings-area">
         <div id="settings-container" class="settings-container">
             <div title="Click to close settings menu" onclick="settingsMenu('close')" class="settings-close"><i class="fa-solid fa-xmark"></i></div>
             <div class="settings-title disable-selection">App Settings</div>
         </div>
     </div>
-    <div class="brand disable-selection">Chatting App <span style="font-size: 10px;">by <a style="font-size:15px;text-decoration: none; color: #33f;" href="https://github.com/shndevdotpy" target="_blank">shndev</a></span></div>
+    <div id="brand" class="brand disable-selection">Chatting App <span style="font-size: 10px;">by <a style="font-size:15px;text-decoration: none; color: #33f;" href="https://github.com/shndevdotpy" target="_blank">shndev</a></span></div>
     <div class="servers disable-selection">
         <a><div class="dm"><i class="fa-solid fa-message"></i><div id="dm-pings" class="dm-pings">+99</div></div></a>
         <a><div class="server"></div></a>
@@ -372,6 +372,7 @@
    
 
     <script src="js/app.js"></script>
+    <script src="js/branding.js"></script>
     <script src="https://kit.fontawesome.com/8ef372609d.js" crossorigin="anonymous"></script>
 </body>
 </html>
