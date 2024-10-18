@@ -28,6 +28,7 @@ body{
     color: white;
     padding: 5px;
     font-weight: bold;
+    
 }
 
 .servers{
@@ -462,5 +463,73 @@ body{
 
   .settings-title{
     margin: 10px;
+    color: white;
+  }
+
+  .messages-area{
+    width: 60%;
+    height: 80vh;
+    position: absolute;
+    z-index: 1;
+    margin: 0;
+    padding: 10px;
+    background-color: #1f1f1f;
+    margin-left: 300px;
+    margin-top: -100px;
+    overflow-y: scroll;
+  }
+
+  .messages-area::-webkit-scrollbar {
+    width: 7px;
+}
+  
+.messages-area::-webkit-scrollbar-track {
+    background: #1c1c1c; 
+}
+   
+.messages-area::-webkit-scrollbar-thumb {
+    background: #3c3c3c; 
+}
+  
+.messages-area::-webkit-scrollbar-thumb:hover {
+    background: #2c2c2c; 
+}
+
+  .message-element{
+    width: max-content;
+    height: max-content;
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    max-width: 80%;
+  }
+
+  .message-author-pp{
+    width: 40px;
+    height: 30px;
+    padding-top: 10px;
+    border-radius: 1000px;
+    background-image: url("../images/default-pp.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+  }
+
+  .message-author{
+    color: white;
+    font-weight: bold;
+    padding: 0 5px 0 5px;
+    margin-left: 50px;
+  }
+
+  .message-author-time{
+    color: gray;
+    margin-left: 55px;
+    font-size: 13px;
+  }
+
+  .message-author-message{
+    padding-top: 20px;
     color: white;
   }
