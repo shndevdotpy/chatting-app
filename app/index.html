@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatting App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="loader(); randomDMNumber(150)">
+    <div id="loader" class="loader disable-selection"><div class="loadertext">Chatting App</div><div class="loaderdot"></div></div>
+    <div id="settings-area" class="settings-area">
+        <div id="settings-container" class="settings-container">
+            <div title="Click to close settings menu" onclick="settingsMenu('close')" class="settings-close"><i class="fa-solid fa-xmark"></i></div>
+            <div class="settings-title disable-selection">App Settings</div>
+        </div>
+    </div>
+    <div class="brand disable-selection">Chatting App <span style="font-size: 10px;">by <a style="font-size:15px;text-decoration: none; color: #33f;" href="https://github.com/shndevdotpy" target="_blank">shndev</a></span></div>
+    <div class="servers disable-selection">
+        <a><div class="dm"><i class="fa-solid fa-message"></i><div id="dm-pings" class="dm-pings">+99</div></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+        <a><div class="server"></div></a>
+    </div>
+
+    <div class="dm-buttons-active disable-selection"><i class="fa-solid fa-message"></i> Direct Messages</div>
+    <div class="dm-buttons disable-selection"><i class="fa-solid fa-user-group"></i> Friends</div>
+
+    <div class="user-area disable-selection">
+        <div class="user-info">
+            <div class="userpp online"></div>
+            <div class="username">shndev</div>
+            <div class="userid">@shndev</div>
+        </div>
+        <div class="user-controls">
+            <div id="mutebutton" onclick="muteUnmute()" title="Click to toggle your microphone" class="muted"><i class="fa-solid fa-microphone"></i></div>
+            <div id="deafbutton" onclick="deafUndeaf()" title="Click to toggle your headphones" class="deaf"><i class="fa-solid fa-headphones"></i></div>
+            <div id="settingsbutton" onclick="settingsMenu('open')" title="Click to open settings menu" class="settings"><i class="fa-solid fa-gear"></i></div>
+        </div>
+    </div>
+
+    <div class="friends disable-selection">
+        <div class="friend-element-active">
+            <div class="friend-pp online"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Online</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp dnd"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Do not disturb</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp idle"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Idle</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp dnd"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Do not disturb</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp idle"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Idle</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp dnd"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Do not disturb</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp idle"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Idle</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp dnd"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Do not disturb</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp idle"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Idle</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp dnd"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Do not disturb</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp idle"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Idle</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp dnd"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Do not disturb</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp offline"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Offline</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="friend-element">
+            <div class="friend-pp idle"></div>
+            <div class="friend-element-textarea">
+                <div class="friend-name">User</div>
+                <div class="friend-custom-status">Idle</div>
+            </div>
+            <span title="Close DM" class="close-dm"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+    </div>
+
+    <div class="chatarea">
+        <textarea id="chatbar" placeholder="Click to type anything" class="chatbar"></textarea>
+        <div title="Click to send your message" class="sendbutton disable-selection"><i class="fa-solid fa-paper-plane"></i></div>
+    </div>
+    
+   
+
+    <script src="js/app.js"></script>
+    <script src="https://kit.fontawesome.com/8ef372609d.js" crossorigin="anonymous"></script>
+</body>
+</html>
