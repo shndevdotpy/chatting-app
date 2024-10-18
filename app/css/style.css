@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    transition: 0.1s all;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;  
+    background-color: black;
+}
+
+::selection {
+    background: #33f;
+  }
+
+.disable-selection{
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.brand{
+    width: 100%-5;
+    background-color: #1c1c1c;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.servers{
+    background: #1c1c1c;
+    width: 60px;
+    height: 100vh;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-left: 5px;
+    position: fixed;
+    overflow-y: scroll;
+}
+
+.servers::-webkit-scrollbar {
+    width: 0px;
+  }
+
+
+
+.dm{
+    width: 50px;
+    height: 40px;
+    border-radius: 1000px;
+    background-color:  #33f;
+    margin: 0 0 20px 5px;
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.dm:hover{
+    background-color: rgb(40, 40, 172);
+    color: white;
+}
+
+.dm:hover .dm-pings{
+    color: black;
+}
+
+.dm-pings{
+    color: white;
+    border-radius: 1000px;
+    width: 30px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    position: absolute;
+    text-align: center;
+    margin-left: 5px;
+    margin-top: -33px;
+}
+
+.server{
+    width: 50px;
+    height: 50px;
+    border-radius: 1000px;
+    background-color: red;
+    margin: 10px 0 10px 5px;
+    cursor: pointer;
+}
+
+.server:hover{
+    opacity: 65%;
+}
+
+.dm-buttons-active{
+    width: 200px;
+    height: 35px;
+    background-color: #3c3c3c;
+    color: white;
+    margin-left: 75px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+.dm-buttons{
+    width: 200px;
+    height: 35px;
+    background-color: #2c2c2c;
+    color: white;
+    margin-left: 75px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.dm-buttons:hover{
+    background-color: #3c3c3c;
+    cursor: pointer;
+}
+
+.friends{
+    background: #1c1c1c;
+    width: 200px;
+    height: 66vh;
+    padding-top: 35px;
+    margin-left: 75px;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.friends::-webkit-scrollbar {
+    width: 7px;
+}
+  
+.friends::-webkit-scrollbar-track {
+    background: #1c1c1c; 
+}
+   
+.friends::-webkit-scrollbar-thumb {
+    background: #3c3c3c; 
+}
+  
+.friends::-webkit-scrollbar-thumb:hover {
+    background: #2c2c2c; 
+}
+
+.friend-element{
+    background-color: #1c1c1c;
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    
+}
+
+.friend-element:hover{
+    background-color: #2c2c2c;
+    cursor: pointer;
+}
+
+.friend-element-active{
+    background-color: #2c2c2c;
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+}
+
+.friend-pp{
+    width: 30px;
+    height: 20px;
+    padding-top: 10px;
+    border-radius: 1000px;
+    background-image: url("../images/default-pp.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    border: 4px solid #aaa;
+}
+
+.offline{
+    border: 4px solid #aaa;
+}
+
+.online{
+    border: 4px solid #37FF52;
+}
+
+.dnd{
+    border: 4px solid #ff3737;
+}
+
+.idle{
+    border: 4px solid #ffaf37;
+}
+
+.friend-element-textarea{
+    width: 130px;
+    height: 35px;
+    margin-left: 10px;
+    float: left;
+}
+
+.friend-name{
+    color: white;
+    font-size: 16px;
+}
+
+.friend-custom-status{
+    color: gray;
+    font-size: 12px;
+
+}
+
+.close-dm{
+    color: gray;
+    clear: both;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-left: -10px;
+    position: absolute;
+    opacity: 0%;
+    cursor: pointer;
+}
+
+.close-dm:hover{
+    color: white;
+}
+
+.friend-element:hover .close-dm{
+    opacity: 100%;
+}
+
+.friend-element-active:hover .close-dm{
+    opacity: 100%;
+}
+
+
+.user-area{
+    width: 200px;
+    height: 90px;
+    background-color: #2c2c2c;
+    padding: 10px 0 0 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    color: white;
+    margin-left: 75px;
+}
+
+.userpp{
+    width: 30px;
+    height: 20px;
+    padding-top: 10px;
+    border-radius: 1000px;
+    background-image: url("../images/default-pp.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    margin: 5px;
+}
+
+.username{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-left: 55px;
+}
+
+.userid{
+    color: gray;
+    font-size: 12px;
+    padding-left: 55px;
+}
+
+.mute{
+    color: #aaa;
+    float: left;
+    margin: 20px 10px 5px 10px;
+    cursor: pointer;
+}
+
+.muted{
+    color: #ff3737;
+    float: left;
+    margin: 20px 10px 5px 10px;
+    cursor: pointer;
+}
+
+.mute:hover{
+    color: white;
+}
+
+.deaf{
+    color: #aaa;
+    float: left;
+    margin: 20px 10px 5px 10px;
+    cursor: pointer;
+}
+
+.deafen{
+    color: #ff3737;
+    float: left;
+    margin: 20px 10px 5px 10px;
+    cursor: pointer;
+}
+
+.deaf:hover{
+    color: white;
+}
+
+.settings{
+    color: #aaa;
+    float: left;
+    margin: 20px 10px 5px 10px;
+    cursor: pointer;
+    transition: 1s all;
+}
+
+.settings:hover{
+    color: white;
+}
+
+.loader{
+    width: 100%;
+    height: 100vh;
+    background-color: #1c1c1c;
+    z-index: 2;
+    position: fixed;
+    opacity: 100%;
+    transition: 0.5s ease all;
+}
+
+.loadertext{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 50vh;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+/* HTML: <div class="loaderdot"></div> */
+.loaderdot {
+    width: 60px;
+    aspect-ratio: 2;
+    --_g: no-repeat radial-gradient(circle closest-side,#33f 90%,#0000);
+    background: 
+      var(--_g) 0%   50%,
+      var(--_g) 50%  50%,
+      var(--_g) 100% 50%;
+    background-size: calc(100%/3) 50%;
+    animation: l3 1s infinite linear;
+    margin: auto;
+    margin-top: 20px;
+  }
+  @keyframes l3 {
+      20%{background-position:0%   0%, 50%  50%,100%  50%}
+      40%{background-position:0% 100%, 50%   0%,100%  50%}
+      60%{background-position:0%  50%, 50% 100%,100%   0%}
+      80%{background-position:0%  50%, 50%  50%,100% 100%}
+  }
+
+  .chatarea{
+    background-color: #1f1f1f;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    margin-left: 275px;
+    margin-top: -100px;
+  }
+
+  .chatbar{
+    width: 70%;
+    background-color: #2c2c2c;
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 10px 10px 10px 20px;
+    color: white;
+    border-radius: 0 50px 50px 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    font-size: 15px;
+    max-width: 50%;
+    display: flex;
+  }
+
+  .chatbar::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  .sendbutton{
+    width: 60px;
+    height: 45px;
+    background-color: #33f;
+    border-radius: 1000px 0 0 1000px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 10px;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-left: 40px;
+    margin-bottom: 50px;
+    font-size: 25px;
+  }
+
+  .sendbutton:hover{
+    background-color: rgb(40, 40, 172);
+    color: white;
+  }
+
+  .settings-area{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0%;
+    transition: 0.5s;
+  }
+
+  .settings-container{
+    width: 700px;
+    height: 500px;
+    background-color: #2c2c2c;
+    margin: auto;
+    margin-top: 300px;
+    border-radius: 20px;
+    z-index: 3;
+    padding-top: 5px;
+    transition: 1s all;
+  }
+
+  .settings-close{
+    width: 20px;
+    height: 20px;
+    color: gray;
+    text-align: center;
+    border-radius: 1000px;
+    font-weight: bold;
+    margin: 10px;
+    float: left;
+  }
+
+  .settings-close:hover{
+    color: white;
+  }
+
+  .settings-title{
+    margin: 10px;
+    color: white;
+  }
